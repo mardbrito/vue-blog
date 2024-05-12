@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 const postStore = usePostsStore()
 const router = useRouter()
 const post = reactive({
-  title: 'my title',
+  title: '',
   body: ''
 })
 
