@@ -1,4 +1,8 @@
 <script setup>
+import { usePostsStore } from '@/stores/posts'
+
+const postStore = usePostsStore()
+
 defineProps({
   post: {
     type: Object,
@@ -12,7 +16,7 @@ defineProps({
     <div class="header">
       <span>Written by: {{ post.author }} on {{ post.created_at }}</span>
       <div>
-        <button class="del">delete</button>
+        <button @click="postStore.deletePost(post.id)" class="del">delete</button>
         <button class="save">bookmark</button>
       </div>
     </div>
