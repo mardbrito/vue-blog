@@ -38,5 +38,17 @@ export const usePostsStore = defineStore('posts', {
         }
       ]
     }
+  },
+  actions: {
+    addPost(post) {
+      this.posts.push({
+        id: this.posts.length + 1,
+        title: post.title,
+        body: post.body,
+        author: 'Unknow',
+        created_at: new Date().toLocaleDateString(),
+        is_saved: false
+      })
+    }
   }
 })
