@@ -39,6 +39,11 @@ export const usePostsStore = defineStore('posts', {
       ]
     }
   },
+  getters: {
+    sorted() {
+      return this.posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    }
+  },
   actions: {
     addPost(post) {
       this.posts.push({

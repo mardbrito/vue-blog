@@ -6,7 +6,7 @@ const postStore = usePostsStore()
 </script>
 
 <template>
-  <div v-for="post in postStore.posts" :key="post.id">
+  <div v-for="post in postStore.sorted" :key="post.id">
     <div class="wrapper">
       <PostItem :post="post" />
     </div>
